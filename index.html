@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RetroVerse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Marketplace retro</p>
+        <h1>RetroVerse</h1>
+      </div>
+      <nav aria-label="Secciones">
+        <a href="#catalogo">Catalogo</a>
+        <a href="#seleccion">Seleccion</a>
+        <a href="#comprar">Comprar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Coleccionables, tecnologia vintage y cultura gamer</p>
+          <h2>Compra, vende o intercambia objetos retro con datos organizados.</h2>
+          <p>
+            La app permite publicar articulos como consolas clasicas, cassettes,
+            joysticks, revistas gamer y objetos de coleccion. Cada publicacion
+            tiene un codigo unico para identificarla sin confusiones.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#catalogo">Ver catalogo</a>
+            <a class="button secondary" href="#seleccion">Mi seleccion</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Vista previa de producto destacado">
+          <div class="product-visual">8-BIT</div>
+          <p class="tag">Producto destacado</p>
+          <h3>GameBox Mini 1992</h3>
+          <p>Consola portatil restaurada con estuche original.</p>
+          <strong>$82.000</strong>
+        </div>
+      </section>
+
+      <section id="catalogo" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Catalogo</p>
+          <h2>Publicaciones disponibles</h2>
+        </div>
+        <div class="toolbar">
+          <label>
+            Buscar
+            <input id="searchInput" type="search" placeholder="Consola, cassette, revista..." />
+          </label>
+          <label>
+            Categoria
+            <select id="categorySelect">
+              <option value="Todas">Todas</option>
+              <option value="Consolas">Consolas</option>
+              <option value="Musica">Musica</option>
+              <option value="Revistas">Revistas</option>
+              <option value="Accesorios">Accesorios</option>
+              <option value="Fotografia">Fotografia</option>
+              <option value="Arcade">Arcade</option>
+              <option value="Wearables">Wearables</option>
+            </select>
+          </label>
+          <label>
+            Operacion
+            <select id="operationSelect">
+              <option value="Todas">Todas</option>
+              <option value="Venta">Venta</option>
+              <option value="Intercambio">Intercambio</option>
+              <option value="Venta o intercambio">Venta o intercambio</option>
+            </select>
+          </label>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <section id="seleccion" class="section selection-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Mi seleccion</p>
+            <h2>Objetos guardados</h2>
+          </div>
+        </div>
+        <div class="checkout-grid">
+          <div class="selection-list" id="selectedItems">
+            <p class="empty-state">Todavia no agregaste objetos.</p>
+          </div>
+          <aside class="checkout-panel">
+            <p class="eyebrow">Reserva</p>
+            <h3>Resumen</h3>
+            <div class="detail-row"><strong>Items</strong><span id="itemCount">0</span></div>
+            <div class="detail-row"><strong>Total estimado</strong><span id="totalAmount">$0</span></div>
+            <button class="button primary wide" id="reserveButton" type="button" disabled>Reservar seleccion</button>
+            <p id="reserveMessage" class="reserve-message"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="comprar" class="section demo">
+        <p class="eyebrow">Compra retro</p>
+        <h2>Elegir, reservar y coordinar</h2>
+        <div class="step-grid">
+          <div>
+            <span class="model-number">01</span>
+            <h3>Explorar</h3>
+            <p>Busca por nombre, categoria, operacion o codigo de publicacion.</p>
+          </div>
+          <div>
+            <span class="model-number">02</span>
+            <h3>Guardar</h3>
+            <p>Abri el detalle del objeto y agregalo a tu seleccion.</p>
+          </div>
+          <div>
+            <span class="model-number">03</span>
+            <h3>Reservar</h3>
+            <p>La app arma una reserva con los objetos exactos que elegiste.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="productDialog">
+      <button id="closeDialog" class="icon-button" aria-label="Cerrar">x</button>
+      <div id="dialogContent"></div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

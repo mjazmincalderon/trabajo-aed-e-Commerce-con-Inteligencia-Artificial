@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrega RetroVerse</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .deliverable-hero {
+        min-height: auto;
+        padding-bottom: 48px;
+      }
+
+      .deliverable-card {
+        background: var(--panel);
+        border: 4px solid var(--line);
+        border-radius: 6px;
+        box-shadow: 10px 10px 0 var(--accent-strong);
+        padding: clamp(18px, 3vw, 28px);
+      }
+
+      .deliverable-grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .prompt-card {
+        background: #fff9e9;
+        border: 3px solid var(--line);
+        border-radius: 6px;
+        box-shadow: 5px 5px 0 rgba(45, 34, 80, 0.92);
+        padding: 16px;
+      }
+
+      .prompt-card p,
+      .deliverable-card p,
+      .deliverable-card li {
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .deliverable-card h3 {
+        margin: 0 0 10px;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+      }
+
+      .checklist li {
+        background: #fff9e9;
+        border: 2px solid var(--line);
+        border-radius: 6px;
+        padding: 10px 12px;
+      }
+
+      @media (max-width: 860px) {
+        .deliverable-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Actividad Formativa Nro. 2</p>
+        <h1>Entrega RetroVerse</h1>
+      </div>
+      <nav aria-label="Secciones">
+        <a href="index.html">App</a>
+        <a href="#registro">Registro</a>
+        <a href="#prompts">Prompts</a>
+        <a href="#reflexion">Reflexion</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero deliverable-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">E-commerce con IA</p>
+          <h2>RetroVerse: objetos vintage, coleccionables y tecnologia retro.</h2>
+          <p>
+            RetroVerse es una app para comprar, vender, intercambiar o reservar
+            articulos retro. El sistema usa publicaciones con codigo unico para
+            diferenciar productos parecidos y organizar el catalogo.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="index.html">Abrir app</a>
+            <a class="button secondary" href="#registro">Ver registro</a>
+          </div>
+        </div>
+        <div class="deliverable-card">
+          <p class="eyebrow">Checklist de consigna</p>
+          <ul class="checklist">
+            <li>Nombre y descripcion del e-commerce elegido.</li>
+            <li>Registro principal con campos y tipos de dato.</li>
+            <li>Clave identificada y justificada.</li>
+            <li>Prompts utilizados con IA.</li>
+            <li>Reflexion sobre el uso de IA.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="registro" class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Registro principal</p>
+            <h2>PublicacionRetro</h2>
+          </div>
+        </div>
+        <div class="deliverable-grid">
+          <div class="deliverable-card">
+            <h3>Clave elegida</h3>
+            <p>
+              La clave es <strong>codigoPublicacion</strong>. Se eligio porque
+              identifica de forma unica cada publicacion. Dos productos pueden
+              tener el mismo nombre, categoria, precio o vendedor, pero no deben
+              compartir el mismo codigo.
+            </p>
+            <p>
+              En la app, esa clave se usa internamente para abrir detalles,
+              agregar productos a la seleccion, quitarlos y armar la reserva.
+            </p>
+          </div>
+          <div class="deliverable-card">
+            <h3>Ejemplo</h3>
+            <p><strong>codigoPublicacion:</strong> RV-0001</p>
+            <p><strong>nombreProducto:</strong> GameBox Mini 1992</p>
+            <p><strong>categoria:</strong> Consolas</p>
+            <p><strong>tipoOperacion:</strong> Venta</p>
+            <p><strong>precio:</strong> 82000</p>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 24px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Campo</th>
+                <th>Tipo de dato</th>
+                <th>Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>codigoPublicacion</td><td>Texto</td><td>Codigo unico, por ejemplo RV-0001.</td></tr>
+              <tr><td>nombreProducto</td><td>Texto</td><td>Nombre visible del producto.</td></tr>
+              <tr><td>categoria</td><td>Texto</td><td>Consolas, musica, revistas, accesorios, fotografia, arcade o wearables.</td></tr>
+              <tr><td>anioOrigen</td><td>Entero</td><td>Anio aproximado de origen del producto.</td></tr>
+              <tr><td>estado</td><td>Texto</td><td>Usado, restaurado o coleccion.</td></tr>
+              <tr><td>tipoOperacion</td><td>Texto</td><td>Venta, intercambio o venta/intercambio.</td></tr>
+              <tr><td>precio</td><td>Real</td><td>Valor de venta o referencia.</td></tr>
+              <tr><td>disponibleParaIntercambio</td><td>Booleano</td><td>Verdadero o falso.</td></tr>
+              <tr><td>vendedor</td><td>Texto</td><td>Usuario que publica.</td></tr>
+              <tr><td>ubicacion</td><td>Texto</td><td>Ciudad o zona del producto.</td></tr>
+              <tr><td>fechaPublicacion</td><td>Fecha</td><td>Fecha de carga.</td></tr>
+              <tr><td>imagen</td><td>Texto</td><td>Ruta de la foto del producto.</td></tr>
+              <tr><td>descripcion</td><td>Texto</td><td>Detalle adicional del producto.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="prompts" class="section">
+        <p class="eyebrow">Captura de prompts usados</p>
+        <h2>Interaccion con la IA</h2>
+        <div class="deliverable-grid" style="margin-top: 22px;">
+          <article class="prompt-card"><h3>Prompt 1</h3><p>Necesito crear una idea de app de e-commerce creativa para una actividad escolar. La consigna pide que no sea un e-commerce convencional. Quiero usar la opcion RetroVerse: tienda digital de objetos vintage, coleccionables o tecnologia retro. Ayudame a definir el nombre, una descripcion breve de la app y que productos podria ofrecer.</p></article>
+          <article class="prompt-card"><h3>Prompt 2</h3><p>Para la app RetroVerse, necesito el diseno de un registro principal relacionado con los productos ofrecidos. Inclui el nombre de cada campo, el tipo de dato esperado y una breve descripcion. El prompt debe incluir explicitamente la definicion de una clave para organizar y diferenciar los datos.</p></article>
+          <article class="prompt-card"><h3>Prompt 3</h3><p>Mejora el registro principal de RetroVerse para que sea coherente con un e-commerce. Agrega una clave llamada codigoPublicacion, justifica por que es una buena clave y explica por que no conviene usar solo el nombre del producto como identificador.</p></article>
+          <article class="prompt-card"><h3>Prompt 4</h3><p>Genera ejemplos concretos de registros para RetroVerse. Cada ejemplo debe tener codigoPublicacion, nombreProducto, categoria, anioOrigen, estado, tipoOperacion, precio, disponibleParaIntercambio, vendedor, ubicacion, fechaPublicacion y descripcion.</p></article>
+          <article class="prompt-card"><h3>Prompt 5</h3><p>Genera una idea de demo para una app web de RetroVerse. La demo debe mostrar un catalogo de productos, filtros de busqueda, tarjetas de productos, detalle de una publicacion y una seccion donde se explique el registro principal y su clave.</p></article>
+          <article class="prompt-card"><h3>Prompt 6</h3><p>Modifica la app para que no muestre explicaciones teoricas sobre registros en pantalla. La app debe usar internamente registros y una clave, pero la interfaz debe verse como un e-commerce real: catalogo, filtros, detalle de producto, seleccion de objetos y reserva.</p></article>
+          <article class="prompt-card"><h3>Prompt 7</h3><p>Agrega mas productos retro para comprar y genera imagenes con IA para que cada publicacion tenga una foto de producto. Mantene la estructura de datos con codigoPublicacion como clave y completa los campos del registro para cada producto.</p></article>
+        </div>
+      </section>
+
+      <section id="reflexion" class="section demo">
+        <p class="eyebrow">Reflexion</p>
+        <h2>Uso de IA</h2>
+        <div class="deliverable-card">
+          <p>
+            La IA me ayudo a transformar una idea general en una propuesta organizada
+            y mas completa. Primero sirvio para definir la tematica del e-commerce y
+            pensar productos coherentes con RetroVerse. Despues me ayudo a identificar
+            que datos necesitaba guardar cada publicacion y a convertirlos en campos
+            de un registro. Tambien fue util para elegir una clave adecuada y justificar
+            por que otros campos no sirven como identificadores unicos. Luego use la IA
+            para mejorar la app, sumar filtros, una seleccion de compra y fotos de
+            productos. El proceso me ayudo a entender mejor como modelar informacion
+            real dentro de una aplicacion.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
